@@ -1,5 +1,5 @@
-# Catching the Blackdog Easily: A Convenient Depression Diagnosis Method based on Audio-Visual Deep Learning
-This is the official pytorch implement of "Catching the Blackdog Easily: A Convenient Depression Diagnosis Method based on Audio-Visual Deep Learning".
+# CDD_AVDL
+This is the official pytorch implement of CDD_AVDL.
 
 The parameter of Layer fusion should hand compute in different task. The implement of parameter interface and process of training and test
 are omitted for commercial protection.
