@@ -4,7 +4,7 @@ This is the official pytorch implement of CDD_AVDL.
 The parameter of Layer fusion should hand compute in different task. The implement of parameter interface and process of training and test
 are omitted for commercial protection.
 
-The demo Calling code is shown in `\net\CDD-ACDL.py` `if __name__ == '__main__':`
+The demo Calling code is shown in `\net\CDD-AVDL.py` `if __name__ == '__main__':`
 
 ## Usage
 
