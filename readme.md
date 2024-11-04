@@ -14,5 +14,5 @@ pip install -r requirements.txt
 ````
 manual download the weight of `vit_deit_small_distilled_patch16_224`  to `.\net\pretrain_models` or just wait  ``timm`` download after calling next command.
 ````
-python .\net\CDD-ACDL.py
+python .\net\CDD-AVDL.py
 ````
