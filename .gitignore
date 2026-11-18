@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+
+# Tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Training artefacts
+runs/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+wandb/
+lightning_logs/
+
+# Data and features
+data/
+*.npy
+*.npz
+*.wav
+*.mp4
+*.avi
+
+# Pretrained weights
+net/pretrained_models/
+pretrained_models/
+
+# Editors and OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

@@ -2,10 +2,10 @@ import os
 
 import timm
 import torch
-import wget
+wget = None
 from torch import nn
-from torch.cuda.amp import autocast
-from timm.models.layers import to_2tuple,trunc_normal_
+autocast = lambda: (lambda fn: fn)
+from timm.layers import to_2tuple, trunc_normal_
 
 
 class PatchEmbed(nn.Module):
@@ -40,7 +40,7 @@ class ASTModel(nn.Module):
     def __init__(self, label_dim=527, fstride=10, tstride=10, input_fdim=128, input_tdim=1024, imagenet_pretrain=True, audioset_pretrain=False, model_size='small224', verbose=True):
 
         super(ASTModel, self).__init__()
-        assert timm.__version__ == '0.4.5', 'Please use timm == 0.4.5, the code might not be compatible with newer versions.'
+        pass
 
         if verbose == True:
             print('---------------AST Model Summary---------------')
@@ -51,13 +51,13 @@ class ASTModel(nn.Module):
         # if AudioSet pretraining is not used (but ImageNet pretraining may still apply)
         if audioset_pretrain == False:
             if model_size == 'tiny224':
-                self.v = timm.create_model('vit_deit_tiny_distilled_patch16_224', pretrained=imagenet_pretrain)
+                self.v = timm.create_model('deit_tiny_distilled_patch16_224', pretrained=imagenet_pretrain)
             elif model_size == 'small224':
-                self.v = timm.create_model('vit_deit_small_distilled_patch16_224', pretrained=imagenet_pretrain)
+                self.v = timm.create_model('deit_small_distilled_patch16_224', pretrained=imagenet_pretrain)
             elif model_size == 'base224':
-                self.v = timm.create_model('vit_deit_base_distilled_patch16_224', pretrained=imagenet_pretrain)
+                self.v = timm.create_model('deit_base_distilled_patch16_224', pretrained=imagenet_pretrain)
             elif model_size == 'base384':
-                self.v = timm.create_model('vit_deit_base_distilled_patch16_384', pretrained=imagenet_pretrain)
+                self.v = timm.create_model('deit_base_distilled_patch16_384', pretrained=imagenet_pretrain)
             else:
                 raise Exception('Model size must be one of tiny224, small224, base224, base384.')
             self.original_num_patches = self.v.patch_embed.num_patches

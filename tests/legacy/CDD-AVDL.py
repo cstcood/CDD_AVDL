@@ -3,9 +3,9 @@ import os
 import torch
 from torch import nn
 
-from net.AST import ASTModel
-from net.Layerfusion import patch_concat
-from net.MLSTM_FCN import MLSTMfcn
+from AST import ASTModel
+from Layerfusion import patch_concat
+from MLSTM_FCN import MLSTMfcn
 
 
 

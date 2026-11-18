@@ -1,0 +1,42 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper and this repository."
+title: "CDD-AVDL: Audio-Visual Deep Learning for Depression Diagnosis"
+abstract: "Reference implementation of CDD-AVDL, an audio-visual depression diagnosis model that fuses wav2vec2/AST audio features with OpenGraphAU/MLSTM-FCN visual features through three convolution-layer fusion stages."
+type: software
+license: MIT
+repository-code: "https://github.com/cstcood/CDD_AVDL"
+keywords:
+  - depression diagnosis
+  - audio-visual learning
+  - affective computing
+  - wav2vec2
+  - AST
+  - MLSTM-FCN
+authors:
+  - family-names: Liu
+    given-names: Linfeng
+  - family-names: Chen
+    given-names: Sitan
+  - family-names: Chen
+    given-names: Kejia
+  - family-names: Xu
+    given-names: Jiajun
+  - family-names: Chen
+    given-names: Xiacan
+preferred-citation:
+  type: article
+  title: "Catching the Blackdog Easily: A Convenient Depression Diagnosis Method based on Audio-Visual Deep Learning"
+  authors:
+    - family-names: Liu
+      given-names: Linfeng
+    - family-names: Chen
+      given-names: Sitan
+    - family-names: Chen
+      given-names: Kejia
+    - family-names: Xu
+      given-names: Jiajun
+    - family-names: Chen
+      given-names: Xiacan
+  journal: "IEEE Transactions on Affective Computing"
+  year: 2025
+  doi: "10.1109/TAFFC.2025.3571697"

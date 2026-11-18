@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cdd-avdl"
+version = "1.0.0"
+description = "Audio-visual deep learning for depression diagnosis (IEEE TAFFC 2025)"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+  { name = "Linfeng Liu" },
+  { name = "Sitan Chen" },
+  { name = "Kejia Chen" },
+  { name = "Jiajun Xu" },
+  { name = "Xiacan Chen" },
+]
+keywords = ["depression", "audio-visual", "affective computing", "wav2vec2", "AST", "MLSTM-FCN"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+  "torch>=2.0",
+  "numpy>=1.24",
+  "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+audio = ["torchaudio>=2.0", "transformers>=4.30"]
+visual = ["opencv-python>=4.8"]
+test = ["pytest>=7.0"]
+all = ["torchaudio>=2.0", "transformers>=4.30", "opencv-python>=4.8", "pytest>=7.0"]
+
+[project.urls]
+Paper = "https://doi.org/10.1109/TAFFC.2025.3571697"
+Source = "https://github.com/cstcood/CDD_AVDL"
+
+[tool.setuptools.packages.find]
+include = ["cdd_avdl*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

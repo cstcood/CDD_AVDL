@@ -1,0 +1,57 @@
+# EATD-Corpus configuration.
+#
+# EATD-Corpus provides short self-recorded answers, so the sequences are
+# shorter than in the paper.  Set audio_len and visual_len from the extracted
+# features before training; the values below assume 30 s of audio at 50 Hz and
+# 30 s of video at 30 Hz.
+
+model:
+  audio_in_dim: 768
+  audio_conv_out: 64
+  audio_conv_kernel: 2
+  ast_out_dim: 8
+  ast_model_size: small224
+  ast_fstride: 10
+  ast_tstride: 10
+  ast_imagenet_pretrain: true
+  ast_audioset_pretrain: false
+  visual_in_dim: 41
+  mlstm_out_dim: 4
+  mlstm_conv_channels: [128, 64, 32]
+  mlstm_conv_kernels: [8, 5, 3]
+  mlstm_lstm_hidden: 16
+  mlstm_lstm_layers: 5
+  mlstm_dropout: 0.7
+  mlstm_se_reduction: 16
+  window_size: 10
+  window_stride: 10
+  fusion_patch_sizes: [32, 32, 8]
+  fusion_final_channels: 8
+  fusion_weight: 0.5
+  num_classes: 2
+
+data:
+  root: data/eatd_corpus
+  audio_dir: audio
+  visual_dir: visual
+  label_file: labels.csv
+  audio_len: 1500
+  visual_len: 900
+  num_folds: 5
+  fold: 0
+  num_workers: 4
+  pin_memory: true
+
+train:
+  epochs: 100
+  batch_size: 8
+  lr: 0.0001
+  momentum: 0.9
+  optimizer: sgd
+  scheduler: cosine
+  amp: true
+  seed: 42
+  device: cuda
+  output_dir: runs/eatd_corpus
+  monitor: loss
+  log_interval: 10
